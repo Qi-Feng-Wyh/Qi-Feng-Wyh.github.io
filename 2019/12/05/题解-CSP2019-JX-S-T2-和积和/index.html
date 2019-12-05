@@ -47,28 +47,32 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="QiFeng&#39;s Blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;github.com&#x2F;Qi-Feng-Wyh&#x2F;index.html">
+  <meta name="description" content="CSP-S-JX 2019 T2 和积和 做法一览20pts:打表？不清楚40pts:直接硬算，O($N^4$)70pts:稍微会一点前缀和，O($N^2$)100pts:前缀和PLUS，O(N) 先讲讲70pts的做法容易发现，S(l,r)可以用前缀和化简:S(l,r)=(qzhA[r]-qzhA[l-1])*(qzhB[r]-qzhB[l-1])然后两层循环遍历就完事儿了 接下来是100pts">
+<meta name="keywords" content="前缀和,NOIP提高组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[题解] CSP2019-JX-S-T2 和积和">
+<meta property="og:url" content="http:&#x2F;&#x2F;github.com&#x2F;Qi-Feng-Wyh&#x2F;2019&#x2F;12&#x2F;05&#x2F;%E9%A2%98%E8%A7%A3-CSP2019-JX-S-T2-%E5%92%8C%E7%A7%AF%E5%92%8C&#x2F;index.html">
 <meta property="og:site_name" content="QiFeng&#39;s Blog">
+<meta property="og:description" content="CSP-S-JX 2019 T2 和积和 做法一览20pts:打表？不清楚40pts:直接硬算，O($N^4$)70pts:稍微会一点前缀和，O($N^2$)100pts:前缀和PLUS，O(N) 先讲讲70pts的做法容易发现，S(l,r)可以用前缀和化简:S(l,r)=(qzhA[r]-qzhA[l-1])*(qzhB[r]-qzhB[l-1])然后两层循环遍历就完事儿了 接下来是100pts">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-05T16:18:27.124Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://github.com/Qi-Feng-Wyh/">
+<link rel="canonical" href="http://github.com/Qi-Feng-Wyh/2019/12/05/%E9%A2%98%E8%A7%A3-CSP2019-JX-S-T2-%E5%92%8C%E7%A7%AF%E5%92%8C/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>QiFeng's Blog</title>
+  <title>[题解] CSP2019-JX-S-T2 和积和 | QiFeng's Blog</title>
   
 
 
@@ -163,10 +167,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://github.com/Qi-Feng-Wyh/2019/12/05/%E9%A2%98%E8%A7%A3-CSP2019-JX-S-T2-%E5%92%8C%E7%A7%AF%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -180,8 +184,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/05/%E9%A2%98%E8%A7%A3-CSP2019-JX-S-T2-%E5%92%8C%E7%A7%AF%E5%92%8C/" class="post-title-link" itemprop="url">[题解] CSP2019-JX-S-T2 和积和</a>
+          [题解] CSP2019-JX-S-T2 和积和
         </h1>
 
         <div class="post-meta">
@@ -223,7 +226,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a href="https://www.luogu.com.cn/problem/P5686" target="_blank" rel="noopener">CSP-S-JX 2019 T2 和积和</a></p>
+        <p><a href="https://www.luogu.com.cn/problem/P5686" target="_blank" rel="noopener">CSP-S-JX 2019 T2 和积和</a></p>
 <h1 id="做法一览"><a href="#做法一览" class="headerlink" title="做法一览"></a>做法一览</h1><p>20pts:打表？不清楚<br>40pts:直接硬算，O($N^4$)<br>70pts:稍微会一点前缀和，O($N^2$)<br>100pts:前缀和PLUS，O(N)</p>
 <h1 id="先讲讲70pts的做法"><a href="#先讲讲70pts的做法" class="headerlink" title="先讲讲70pts的做法"></a>先讲讲70pts的做法</h1><p>容易发现，S(l,r)可以用前缀和化简:<br><code>S(l,r)=(qzhA[r]-qzhA[l-1])*(qzhB[r]-qzhB[l-1])</code><br>然后两层循环遍历就完事儿了</p>
 <h1 id="接下来是100pts的正解"><a href="#接下来是100pts的正解" class="headerlink" title="接下来是100pts的正解"></a>接下来是100pts的正解</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我们先把S(l,r)拆开来看:<br><code>S(l,r)=qzhA[r]*qzhB[r]-qzhA[l-1]*qzhB[r]-qzhB[l-1]*qzhA[r]+qzhA[l-1]*qzhA[l-1]</code><br><strong>接下来为了和我的正式代码统一，我要给出一些定义</strong><br>$a_i$和$b_i$为原始数列<br>f(i)=$\sum^i_{k=1}{a_k}$<br>g(i)=$\sum^i_{k=1}{b_k}$<br>h(i)=$\sum^i_{k=1}{f(k) \times g(k)}$<br>x(i)=$\sum^i_{k=1}{f(k)}$<br>y(i)=$\sum^i_{k=1}{g(k)}$  </p>
@@ -232,304 +235,37 @@
 <h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;  </span><br><span class="line">#define ll long long  </span><br><span class="line">const int maxn=500050,p=1e9+7;  </span><br><span class="line">ll a[maxn],b[maxn];//原始数列  </span><br><span class="line">ll f[maxn],g[maxn];//a、b的前缀和  </span><br><span class="line">ll h[maxn],x[maxn],y[maxn];//f*g、f、g的前缀和   </span><br><span class="line">ll n,res=0;  </span><br><span class="line">int read()&#123;  </span><br><span class="line">	int flag=1,res=0,c=getchar();</span><br><span class="line">	while(c&lt;&apos;0&apos;||c&gt;&apos;9&apos;)flag=c==&apos;-&apos;?-1:1,c=getchar();</span><br><span class="line">	while(c&gt;=&apos;0&apos;&amp;&amp;c&lt;=&apos;9&apos;)res=res*10+c-&apos;0&apos;,c=getchar();</span><br><span class="line">	return flag*res;	</span><br><span class="line">&#125;  </span><br><span class="line">//各种套前缀和，O(n)艹过本题   </span><br><span class="line">int main()&#123;  </span><br><span class="line">	n=(ll)read();  </span><br><span class="line">	for(int i=1;i&lt;=n;++i)f[i]=(f[i-1]+(ll)read())%p;  </span><br><span class="line">	for(int i=1;i&lt;=n;++i)g[i]=(g[i-1]+(ll)read())%p;  </span><br><span class="line">	for(int i=1;i&lt;=n;++i)&#123;  </span><br><span class="line">		h[i]=(h[i-1]+f[i]*g[i]%p)%p;   </span><br><span class="line">		x[i]=(x[i-1]+f[i])%p;  </span><br><span class="line">		y[i]=(y[i-1]+g[i])%p;  </span><br><span class="line">	&#125;  </span><br><span class="line">	for(int i=1;i&lt;=n;++i)&#123;  </span><br><span class="line">		//注意，在减法取模时记得加p再%   </span><br><span class="line">		res=(res+h[n])%p;  </span><br><span class="line">		res=(res-g[i-1]*x[n]%p+p)%p;  </span><br><span class="line">		res=(res+g[i-1]*x[i-1]%p)%p;  </span><br><span class="line">		res=(res-f[i-1]*y[n]%p+p)%p;  </span><br><span class="line">		res=(res+f[i-1]*y[i-1]%p)%p;  </span><br><span class="line">	&#125;  </span><br><span class="line">	printf(&quot;%lld&quot;,res);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>本题是一道很好的前缀和练习题，它告诉我们：<br><strong>只要是求和的东西，就可以套前缀和来降低复杂度！</strong></p>
 <h1 id="Have-A-Nice-Day-D"><a href="#Have-A-Nice-Day-D" class="headerlink" title="Have A Nice Day :D"></a>Have A Nice Day :D</h1>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag"># 前缀和</a>
+              <a href="/tags/NOIP%E6%8F%90%E9%AB%98%E7%BB%84/" rel="tag"># NOIP提高组</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://github.com/Qi-Feng-Wyh/2019/12/05/%E9%9A%8F%E6%9C%BA%E5%8C%96%E8%B4%AA%E5%BF%83/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="QiFeng233">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiFeng's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/05/%E9%9A%8F%E6%9C%BA%E5%8C%96%E8%B4%AA%E5%BF%83/" class="post-title-link" itemprop="url">随机化贪心</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-12-05 23:10:44 / 修改时间：23:19:46" itemprop="dateCreated datePublished" datetime="2019-12-05T23:10:44+08:00">2019-12-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%AA%97%E5%88%86%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index">
-                    <span itemprop="name">骗分技巧</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="从一个01背包开始"><a href="#从一个01背包开始" class="headerlink" title="从一个01背包开始"></a>从一个01背包开始</h1><p><a href="https://www.luogu.com.cn/problem/P1048" target="_blank" rel="noopener">采药</a><br>就是个01背包，简单得不能再简单了。现在可以秒切，可是我在学Dp以前，只得了10分……<br>我天真地认为，我们来贪心吧！尽量选性价比高的，不就完事儿了？但事实不是这样的，比如说有些东西性价比高是高，但是它的体积很大，放完就放不下了，然后后边有一堆体积很小、但是性价比低的物品，只要后边那堆物品总价值高于第一个物品，那贪心就贪错了。  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://github.com/Qi-Feng-Wyh/2019/12/04/%E5%89%8D%E7%BC%80%E5%92%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="QiFeng233">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiFeng's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/04/%E5%89%8D%E7%BC%80%E5%92%8C/" class="post-title-link" itemprop="url">前缀和</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-12-04 23:54:00 / 修改时间：23:55:10" itemprop="dateCreated datePublished" datetime="2019-12-04T23:54:00+08:00">2019-12-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h1><h2 id="问题引入"><a href="#问题引入" class="headerlink" title="问题引入"></a>问题引入</h2><p>给你一个长度为N的序列，M个询问，每次询问区间[l,r]的区间和<br>朴素做法：硬算，时间复杂度O(NM)，超时  </p>
-<h2 id="这个时候就可以引出前缀和"><a href="#这个时候就可以引出前缀和" class="headerlink" title="这个时候就可以引出前缀和"></a>这个时候就可以引出前缀和</h2><p>我们设原数列数组为arr[MAXN]，前缀和的数组为qzh[MAXN]，那么有如下递推式：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qzh[0]=0;</span><br><span class="line">for(int i=1;i&lt;=n;++i)qzh[i]=qzh[i-1]+arr[i];</span><br></pre></td></tr></table></figure>
-<p>其中，qzh[i]表示的是arr[1]+arr[2]+…+arr[i]  </p>
-<h2 id="显然，接下来就可以O-1-查询-l-r-的区间和了"><a href="#显然，接下来就可以O-1-查询-l-r-的区间和了" class="headerlink" title="显然，接下来就可以O(1)查询[l,r]的区间和了"></a>显然，接下来就可以O(1)查询[l,r]的区间和了</h2><p><code>res=qzh[r]-qzh[l-1];</code><br>注意，减去的是qzh[l-1]而不是qzh[l]<br>因为qzh[l]包含了arr[l]，如果减去就会多减一个arr[l]，就WA了  </p>
-<h2 id="练习题："><a href="#练习题：" class="headerlink" title="练习题："></a>练习题：</h2><p><a href="https://www.luogu.com.cn/problem/P5686" target="_blank" rel="noopener">CSP-S-JX 2019 T2 和积和</a></p>
-
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/05/%E9%9A%8F%E6%9C%BA%E5%8C%96%E8%B4%AA%E5%BF%83/" rel="prev" title="随机化贪心">
+      <i class="fa fa-chevron-left"></i> 随机化贪心
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://github.com/Qi-Feng-Wyh/2019/11/27/ST%E8%A1%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="QiFeng233">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiFeng's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/27/ST%E8%A1%A8/" class="post-title-link" itemprop="url">ST表</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-27 19:44:23 / 修改时间：19:44:51" itemprop="dateCreated datePublished" datetime="2019-11-27T19:44:23+08:00">2019-11-27</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://github.com/Qi-Feng-Wyh/2019/10/19/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="QiFeng233">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiFeng's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/19/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-19 23:41:31" itemprop="dateCreated datePublished" datetime="2019-10-19T23:41:31+08:00">2019-10-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-28 15:38:11" itemprop="dateModified" datetime="2019-11-28T15:38:11+08:00">2019-11-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>欢迎使用 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 这是第一篇博客. 访问 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> 以获取使用指南. 如果你在使用Hexo中有任何问题，访问 <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> 或者在Github上询问作者 <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="起步指令"><a href="#起步指令" class="headerlink" title="起步指令"></a>起步指令</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署到网站"><a href="#部署到网站" class="headerlink" title="部署到网站"></a>部署到网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -558,6 +294,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#做法一览"><span class="nav-number">1.</span> <span class="nav-text">做法一览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#先讲讲70pts的做法"><span class="nav-number">2.</span> <span class="nav-text">先讲讲70pts的做法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接下来是100pts的正解"><span class="nav-number">3.</span> <span class="nav-text">接下来是100pts的正解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">3.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#化简原式"><span class="nav-number">3.2.</span> <span class="nav-text">化简原式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips-别忘了要-p！"><span class="nav-number">3.3.</span> <span class="nav-text">Tips:别忘了要%p！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上代码"><span class="nav-number">3.4.</span> <span class="nav-text">上代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结："><span class="nav-number">4.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Have-A-Nice-Day-D"><span class="nav-number">5.</span> <span class="nav-text">Have A Nice Day :D</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
