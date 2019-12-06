@@ -47,14 +47,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="QiFeng&#39;s Blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;github.com&#x2F;Qi-Feng-Wyh&#x2F;archives&#x2F;2019&#x2F;11&#x2F;index.html">
+  <meta name="description" content="引出问题思考一下，对于一个给定的n次多项式A(x)，你如何求它在$x_0$处的值A($x_0$)？   朴素算法硬算，O($N^2$)TLE 秦九韶算法，O(N)的正解对于一个多项式A(x)=$\sum_{j=0}^{n-1}{a_j x^j}$，求A($x_0$)，有如下公式：A($x_0$)=$a_0$+$x_0$($a_1$+$x_0$($a_2$+…+$x_0$($a_{n-2}$+$x_">
+<meta name="keywords" content="多项式,多项式求值,秦九韶算法,霍纳算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="秦九韶算法（霍纳算法）">
+<meta property="og:url" content="http:&#x2F;&#x2F;github.com&#x2F;Qi-Feng-Wyh&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E7%A7%A6%E4%B9%9D%E9%9F%B6%E7%AE%97%E6%B3%95%EF%BC%88%E9%9C%8D%E7%BA%B3%E7%AE%97%E6%B3%95%EF%BC%89&#x2F;index.html">
 <meta property="og:site_name" content="QiFeng&#39;s Blog">
+<meta property="og:description" content="引出问题思考一下，对于一个给定的n次多项式A(x)，你如何求它在$x_0$处的值A($x_0$)？   朴素算法硬算，O($N^2$)TLE 秦九韶算法，O(N)的正解对于一个多项式A(x)=$\sum_{j=0}^{n-1}{a_j x^j}$，求A($x_0$)，有如下公式：A($x_0$)=$a_0$+$x_0$($a_1$+$x_0$($a_2$+…+$x_0$($a_{n-2}$+$x_">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-06T12:20:24.884Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://github.com/Qi-Feng-Wyh/archives/2019/11/">
+<link rel="canonical" href="http://github.com/Qi-Feng-Wyh/2019/12/06/%E7%A7%A6%E4%B9%9D%E9%9F%B6%E7%AE%97%E6%B3%95%EF%BC%88%E9%9C%8D%E7%BA%B3%E7%AE%97%E6%B3%95%EF%BC%89/">
 
 
 <script id="page-configurations">
@@ -62,13 +66,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>归档 | QiFeng's Blog</title>
+  <title>秦九韶算法（霍纳算法） | QiFeng's Blog</title>
   
 
 
@@ -162,49 +166,98 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 6 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://github.com/Qi-Feng-Wyh/2019/12/06/%E7%A7%A6%E4%B9%9D%E9%9F%B6%E7%AE%97%E6%B3%95%EF%BC%88%E9%9C%8D%E7%BA%B3%E7%AE%97%E6%B3%95%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QiFeng233">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiFeng's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          秦九韶算法（霍纳算法）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-06 19:43:01 / 修改时间：20:20:24" itemprop="dateCreated datePublished" datetime="2019-12-06T19:43:01+08:00">2019-12-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <h1 id="引出问题"><a href="#引出问题" class="headerlink" title="引出问题"></a>引出问题</h1><p>思考一下，对于一个给定的n次多项式A(x)，你如何求它在$x_0$处的值A($x_0$)？  </p>
+<h2 id="朴素算法"><a href="#朴素算法" class="headerlink" title="朴素算法"></a>朴素算法</h2><p>硬算，O($N^2$)<br><strong>TLE</strong></p>
+<h1 id="秦九韶算法，O-N-的正解"><a href="#秦九韶算法，O-N-的正解" class="headerlink" title="秦九韶算法，O(N)的正解"></a>秦九韶算法，O(N)的正解</h1><p>对于一个多项式A(x)=$\sum_{j=0}^{n-1}{a_j x^j}$，求A($x_0$)，有如下公式：<br>A($x_0$)=$a_0$+$x_0$($a_1$+$x_0$($a_2$+…+$x_0$($a_{n-2}$+$x_0$($a_{n-1}$))…))</p>
+<h1 id="证明："><a href="#证明：" class="headerlink" title="证明："></a>证明：</h1><p>A($x_0$)=$a_{n-1}$${x_0}^{n-1}$+$a_{n-2}$${x_0}^{n-2}$+…+$a_1$${x_0}$+$a_0$<br>A($x_0$)=($a_{n-1}$${x_0}^{n-2}$+$a_{n-2}$${x_0}^{n-3}$+…+$a_2$x+$a_1$)${x_0}$+$a_0$<br>A($x_0$)=(($a_{n-1}$${x_0}^{n-3}$+$a_{n-2}$${x_0}^{n-4}$+…+$a_3$x+$a_2$)${x_0}$+$a_1$)${x_0}$+$a_0$<br>……<br>A($x_0$)=$a_0$+$x_0$($a_1$+$x_0$($a_2$+…+$x_0$($a_{n-2}$+$x_0$($a_{n-1}$))…))</p>
+<h1 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h1>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-27T19:44:23+08:00"
-              content="2019-11-27">
-          11-27
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" rel="tag"># 多项式</a>
+              <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%B1%82%E5%80%BC/" rel="tag"># 多项式求值</a>
+              <a href="/tags/%E7%A7%A6%E4%B9%9D%E9%9F%B6%E7%AE%97%E6%B3%95/" rel="tag"># 秦九韶算法</a>
+              <a href="/tags/%E9%9C%8D%E7%BA%B3%E7%AE%97%E6%B3%95/" rel="tag"># 霍纳算法</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/27/ST%E8%A1%A8/" itemprop="url">
-            <span itemprop="name">ST表</span>
-          </a>
-      </h2>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/05/%E9%A2%98%E8%A7%A3-CSP2019-JX-S-T2-%E5%92%8C%E7%A7%AF%E5%92%8C/" rel="prev" title="[题解] CSP2019-JX-S-T2 和积和">
+      <i class="fa fa-chevron-left"></i> [题解] CSP2019-JX-S-T2 和积和
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -233,6 +286,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引出问题"><span class="nav-number">1.</span> <span class="nav-text">引出问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素算法"><span class="nav-number">1.1.</span> <span class="nav-text">朴素算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#秦九韶算法，O-N-的正解"><span class="nav-number">2.</span> <span class="nav-text">秦九韶算法，O(N)的正解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#证明："><span class="nav-number">3.</span> <span class="nav-text">证明：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现："><span class="nav-number">4.</span> <span class="nav-text">代码实现：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

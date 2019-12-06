@@ -167,6 +167,79 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://github.com/Qi-Feng-Wyh/2019/12/06/%E7%A7%A6%E4%B9%9D%E9%9F%B6%E7%AE%97%E6%B3%95%EF%BC%88%E9%9C%8D%E7%BA%B3%E7%AE%97%E6%B3%95%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QiFeng233">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiFeng's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/06/%E7%A7%A6%E4%B9%9D%E9%9F%B6%E7%AE%97%E6%B3%95%EF%BC%88%E9%9C%8D%E7%BA%B3%E7%AE%97%E6%B3%95%EF%BC%89/" class="post-title-link" itemprop="url">秦九韶算法（霍纳算法）</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-06 19:43:01 / 修改时间：20:20:24" itemprop="dateCreated datePublished" datetime="2019-12-06T19:43:01+08:00">2019-12-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="引出问题"><a href="#引出问题" class="headerlink" title="引出问题"></a>引出问题</h1><p>思考一下，对于一个给定的n次多项式A(x)，你如何求它在$x_0$处的值A($x_0$)？  </p>
+<h2 id="朴素算法"><a href="#朴素算法" class="headerlink" title="朴素算法"></a>朴素算法</h2><p>硬算，O($N^2$)<br><strong>TLE</strong></p>
+<h1 id="秦九韶算法，O-N-的正解"><a href="#秦九韶算法，O-N-的正解" class="headerlink" title="秦九韶算法，O(N)的正解"></a>秦九韶算法，O(N)的正解</h1><p>对于一个多项式A(x)=$\sum_{j=0}^{n-1}{a_j x^j}$，求A($x_0$)，有如下公式：<br>A($x_0$)=$a_0$+$x_0$($a_1$+$x_0$($a_2$+…+$x_0$($a_{n-2}$+$x_0$($a_{n-1}$))…))</p>
+<h1 id="证明："><a href="#证明：" class="headerlink" title="证明："></a>证明：</h1><p>A($x_0$)=$a_{n-1}$${x_0}^{n-1}$+$a_{n-2}$${x_0}^{n-2}$+…+$a_1$${x_0}$+$a_0$<br>A($x_0$)=($a_{n-1}$${x_0}^{n-2}$+$a_{n-2}$${x_0}^{n-3}$+…+$a_2$x+$a_1$)${x_0}$+$a_0$<br>A($x_0$)=(($a_{n-1}$${x_0}^{n-3}$+$a_{n-2}$${x_0}^{n-4}$+…+$a_3$x+$a_2$)${x_0}$+$a_1$)${x_0}$+$a_0$<br>……<br>A($x_0$)=$a_0$+$x_0$($a_1$+$x_0$($a_2$+…+$x_0$($a_{n-2}$+$x_0$($a_{n-1}$))…))</p>
+<h1 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://github.com/Qi-Feng-Wyh/2019/12/05/%E9%A2%98%E8%A7%A3-CSP2019-JX-S-T2-%E5%92%8C%E7%A7%AF%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -577,17 +650,17 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
