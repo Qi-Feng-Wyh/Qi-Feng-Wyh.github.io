@@ -47,15 +47,15 @@
   };
 </script>
 
-  <meta name="description" content="从一个01背包开始采药就是个01背包，简单得不能再简单了。现在可以秒切，可是我在学Dp以前，只得了10分……我天真地认为，我们来贪心吧！尽量选性价比高的，不就完事儿了？但事实不是这样的，比如说有些东西性价比高是高，但是它的体积很大，放完就放不下了，然后后边有一堆体积很小、但是性价比低的物品，只要后边那堆物品总价值高于第一个物品，那贪心就贪错了。">
-<meta name="keywords" content="随机化贪心,骗分">
+  <meta name="description" content="贪心为什么错？有些题目，对答案的贡献是由多个维度，或者说多个因子一起贡献的，但贪心只能贪一个维度，或者说一个因子，或者说贪多个维（因子）之间的”一种关系”，但贪下来不一定是对的，因为答案在多个维度（因子）上不具有单调性。 从一个01背包开始采药就是个01背包，简单得不能再简单了。现在可以秒切，可是我在学Dp以前，只得了10分……我天真地认为，我们来贪心吧！尽量选性价比高的，不就完事儿了？但事实不是">
+<meta name="keywords" content="随机化贪心,随机化,骗分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机化贪心">
 <meta property="og:url" content="http:&#x2F;&#x2F;github.com&#x2F;Qi-Feng-Wyh&#x2F;2019&#x2F;12&#x2F;05&#x2F;%E9%9A%8F%E6%9C%BA%E5%8C%96%E8%B4%AA%E5%BF%83&#x2F;index.html">
 <meta property="og:site_name" content="QiFeng&#39;s Blog">
-<meta property="og:description" content="从一个01背包开始采药就是个01背包，简单得不能再简单了。现在可以秒切，可是我在学Dp以前，只得了10分……我天真地认为，我们来贪心吧！尽量选性价比高的，不就完事儿了？但事实不是这样的，比如说有些东西性价比高是高，但是它的体积很大，放完就放不下了，然后后边有一堆体积很小、但是性价比低的物品，只要后边那堆物品总价值高于第一个物品，那贪心就贪错了。">
+<meta property="og:description" content="贪心为什么错？有些题目，对答案的贡献是由多个维度，或者说多个因子一起贡献的，但贪心只能贪一个维度，或者说一个因子，或者说贪多个维（因子）之间的”一种关系”，但贪下来不一定是对的，因为答案在多个维度（因子）上不具有单调性。 从一个01背包开始采药就是个01背包，简单得不能再简单了。现在可以秒切，可是我在学Dp以前，只得了10分……我天真地认为，我们来贪心吧！尽量选性价比高的，不就完事儿了？但事实不是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-05T15:19:46.536Z">
+<meta property="og:updated_time" content="2019-12-07T15:47:40.017Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://github.com/Qi-Feng-Wyh/2019/12/05/%E9%9A%8F%E6%9C%BA%E5%8C%96%E8%B4%AA%E5%BF%83/">
@@ -208,10 +208,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-05 23:10:44 / 修改时间：23:19:46" itemprop="dateCreated datePublished" datetime="2019-12-05T23:10:44+08:00">2019-12-05</time>
+              <time title="创建时间：2019-12-05 23:10:44" itemprop="dateCreated datePublished" datetime="2019-12-05T23:10:44+08:00">2019-12-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-07 23:47:40" itemprop="dateModified" datetime="2019-12-07T23:47:40+08:00">2019-12-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -235,7 +241,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="从一个01背包开始"><a href="#从一个01背包开始" class="headerlink" title="从一个01背包开始"></a>从一个01背包开始</h1><p><a href="https://www.luogu.com.cn/problem/P1048" target="_blank" rel="noopener">采药</a><br>就是个01背包，简单得不能再简单了。现在可以秒切，可是我在学Dp以前，只得了10分……<br>我天真地认为，我们来贪心吧！尽量选性价比高的，不就完事儿了？但事实不是这样的，比如说有些东西性价比高是高，但是它的体积很大，放完就放不下了，然后后边有一堆体积很小、但是性价比低的物品，只要后边那堆物品总价值高于第一个物品，那贪心就贪错了。  </p>
+        <h1 id="贪心为什么错？"><a href="#贪心为什么错？" class="headerlink" title="贪心为什么错？"></a>贪心为什么错？</h1><p>有些题目，对答案的贡献是由多个维度，或者说多个因子一起贡献的，但贪心只能贪一个维度，或者说一个因子，或者说贪多个维（因子）之间的”一种关系”，但贪下来不一定是对的，因为答案在多个维度（因子）上不具有单调性。</p>
+<h1 id="从一个01背包开始"><a href="#从一个01背包开始" class="headerlink" title="从一个01背包开始"></a>从一个01背包开始</h1><p><a href="https://www.luogu.com.cn/problem/P1048" target="_blank" rel="noopener">采药</a><br>就是个01背包，简单得不能再简单了。现在可以秒切，可是我在学Dp以前，只得了10分……<br>我天真地认为，我们来贪心吧！尽量选性价比高的，不就完事儿了？但事实不是这样的，比如说有些东西性价比高是高，但是它的体积很大，放完就放不下了，然后后边有一堆体积很小、但是性价比低的物品，只要后边那堆物品总价值高于第一个物品，那贪心就贪错了。  </p>
 
     </div>
 
@@ -246,6 +253,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96%E8%B4%AA%E5%BF%83/" rel="tag"># 随机化贪心</a>
+              <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" rel="tag"># 随机化</a>
               <a href="/tags/%E9%AA%97%E5%88%86/" rel="tag"># 骗分</a>
           </div>
 
@@ -299,7 +307,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从一个01背包开始"><span class="nav-number">1.</span> <span class="nav-text">从一个01背包开始</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#贪心为什么错？"><span class="nav-number">1.</span> <span class="nav-text">贪心为什么错？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#从一个01背包开始"><span class="nav-number">2.</span> <span class="nav-text">从一个01背包开始</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -313,7 +321,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -326,7 +334,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
